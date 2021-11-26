@@ -8,18 +8,31 @@ import { Quote} from '../quote'
 })
 export class QuoteComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
-
+ 
     quotes:Quote[]= [
   
-     ('Live as if there is no tommorrow', " African quotes","Ann Lisa"),
-    ('Never never give up', "Black Panther","Wakanda Forever"),
-     ('Never never give up',"Black Panther","Wakanda Forever"),
-      ('Never never give up',"Black Panther","Wakanda Forever"),
-      ('Never never give up',"Black Panther","Wakanda Forever"),
-    ];
-  }
 
-}
+      new Quote('Live as if there is no tommorrow', " African quotes","Ann Lisa",new Date(2020,3,14)),
+      new Quote('Never never give up', "Black Panther","Wakanda Forever",new Date(2020,3,14)),
+      new Quote('Never never give up',"Black Panther","Wakanda Forever",new Date(2020,3,14)),
+      new Quote('Never never give up',"Black Panther","Wakanda Forever",new Date(2020,3,14)),
+      new Quote('Never never give up',"Black Panther","Wakanda Forever",new Date(2020,3,14)),
+    ];
+    
+  
+    toggleDetails(index){
+      this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+    }
+    completeQuote(isComplete, index){
+      if (isComplete) {
+        this.quotes.splice(index,1);
+      }
+    }
+    
+    
+    constructor() { }
+
+    ngOnInit() {
+    }
+  
+  }
