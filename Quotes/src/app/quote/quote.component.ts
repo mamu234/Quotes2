@@ -28,7 +28,32 @@ export class QuoteComponent implements OnInit {
         this.quotes.splice(index,1);
       }
     }
+    deleteQuote(isComplete, index){
+      if (isComplete) {
+        let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+  
+        if (toDelete){
+          this.quotes.splice(index,1)
+        }
+      }
+    }
+
+          
+   
+    AddQuote(isComplete, index){
+      if (isComplete) {
+        let toAdd = confirm(`Are you sure you want to add ${this.quotes[index].name}?`)
+  
+        if (toAdd){
+          this.quotes.splice(index,1)
+
+          
+          
+        }
+      }
+    }
     
+
     
     constructor() { }
 
