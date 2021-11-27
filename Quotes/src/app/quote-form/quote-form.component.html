@@ -9,6 +9,8 @@
 
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
+
+          Display {{newQuote.name}}
           <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
             <p>Name is required</p>
           </div>

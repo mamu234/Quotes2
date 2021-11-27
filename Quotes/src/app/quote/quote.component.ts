@@ -40,21 +40,23 @@ export class QuoteComponent implements OnInit {
 
           
    
-    AddQuote(isComplete, index){
+    addQuote(isComplete, index){
       if (isComplete) {
         let toAdd = confirm(`Are you sure you want to add ${this.quotes[index].name}?`)
   
         if (toAdd){
           this.quotes.splice(index,1)
-
-          
-          
         }
       }
     }
     
+    addNewQuote(quote){
+      let quoteLength = this.quotes.length;
+      Quote.id = quoteLength+1;
+      Quote.completeDate = new Date(Quote.completeDate)
+      this.quotes.push(quote)
 
-    
+    }
     constructor() { }
 
     ngOnInit() {
