@@ -38,8 +38,6 @@ export class QuoteComponent implements OnInit {
       }
     }
 
-          
-   
     addQuote(isComplete, index){
       if (isComplete) {
         let toAdd = confirm(`Are you sure you want to add ${this.quotes[index].name}?`)

@@ -22,7 +22,7 @@ export class QuoteDetailComponent implements OnInit {
     this.isComplete.emit(complete);
   }
   
-  quoteAdd(complete:boolean){
+ quoteAdd(complete:boolean){
     this.isComplete.emit(complete);
   }
   constructor() { }

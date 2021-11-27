@@ -1,14 +1,13 @@
 <div class="container"></div>
 <h1>My Quotes</h1>
 <hr>
-<div class="card" style="width: 50rem;">
-  <div class="card-body">
+
   <div *ngFor='let quote of quotes;let i = index'>
     <li appHighlight>{{quote.name}} due on {{quote.completeDate |date|uppercase}}}</li> 
     <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
     <!-- <button (click)= 'quoteDelete(true)'>Delete Quote</button> -->
    
-    
+    <app-quote-detail *ngIf='quote.showAuthor' [quote]='quote' (isComplete) = 'addQuote($event,i)'></app-quote-detail>
 
     <app-quote-detail *ngIf='quote.showAuthor' [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-detail>
 </div>
