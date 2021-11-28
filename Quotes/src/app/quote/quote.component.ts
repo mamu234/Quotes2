@@ -25,7 +25,7 @@ export class QuoteComponent implements OnInit {
     }
     completeQuote(isComplete, index){
       if (isComplete) {
-        this.quotes.splice(index,1);
+        this.quotes.splice(index,1);  
       }
     }
     deleteQuote(isComplete, index){
@@ -37,23 +37,12 @@ export class QuoteComponent implements OnInit {
         }
       }
     }
-
-    addQuote(isComplete, index){
-      if (isComplete) {
-        let toAdd = confirm(`Are you sure you want to add ${this.quotes[index].name}?`)
-  
-        if (toAdd){
-          this.quotes.splice(index,1)
-        }
-      }
-    }
-    
     addNewQuote(quote){
       let quoteLength = this.quotes.length;
-      Quote.id = quoteLength+1;
-      Quote.completeDate = new Date(Quote.completeDate)
+      quote.id = quoteLength+1;
+      quote.completeDate = new Date(quote.completeDate)
       this.quotes.push(quote)
-
+  
     }
     constructor() { }
 
